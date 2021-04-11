@@ -1,0 +1,28 @@
+"""
+* AUTHOR: T.K.SANTHOSH
+* DATE: 04/05/2021
+* TIME: 3:37 PM
+"""
+# Program to create a simple guessing game using
+# random module and randint function
+import random
+answer = random.randint(1, 5)
+isgame_active = True
+guess = int(input("Guess a number between 1 and 5 ?"))
+in_which_iteration = 1
+
+while isgame_active:
+    if guess < answer:
+        guess = int(input("Guess higher? "))
+
+    elif guess > answer:
+        guess = int(input("Guess lower? "))
+
+    elif guess == answer:
+        print("Congratulation You got it...at {0}".format(in_which_iteration))
+        isgame_active = False
+
+    else:
+        print("Fool you missed to find..")
+        isgame_active = False
+    in_which_iteration += 1
